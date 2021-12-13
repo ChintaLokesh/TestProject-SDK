@@ -34,5 +34,4 @@ jobs:
           pwd
           ls -lah
           mvn clean verify
-        working-directory: TestProject-SDK/ 
           
