@@ -12,24 +12,32 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 
 import io.testproject.sdk.DriverBuilder;
+import io.testproject.sdk.drivers.web.ChromeDriver;
 import io.testproject.sdk.drivers.web.EdgeDriver;
 
 public class FirstTest {
 	
-	public static EdgeDriver driver;
+	public static ChromeDriver driver;
 	
 	@BeforeAll
 	static void configure() throws MalformedURLException
 	{
-		driver = new DriverBuilder<EdgeDriver>(
-		            new EdgeOptions()
-		    )
-		           .withRemoteAddress(new URL("http://localhost:8585"))
-		            .withToken("2pHVg66vxXkBzFgQDYa3T_lQyEbgD801s9G5vEKRezs")
-		            .build(EdgeDriver.class);
+//		driver = new DriverBuilder<EdgeDriver>(
+//		            new EdgeOptions()
+//		    )
+//		           .withRemoteAddress(new URL("http://localhost:8585"))
+//		            .withToken("2pHVg66vxXkBzFgQDYa3T_lQyEbgD801s9G5vEKRezs")
+//		            .build(EdgeDriver.class);
+		
+		
+		 driver = new DriverBuilder<ChromeDriver>(new ChromeOptions())
+	                .withCapabilities(new ChromeOptions())
+	                .withToken("2pHVg66vxXkBzFgQDYa3T_lQyEbgD801s9G5vEKRezs")
+	                .build(ChromeDriver.class);
 	}
 	
 

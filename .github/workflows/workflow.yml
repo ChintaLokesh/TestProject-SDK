@@ -30,6 +30,9 @@ jobs:
       - name: Run tests with Maven
         env:
           TP_DEV_TOKEN: ${{secrets.TP_DEV_TOKEN}}
-        run: mvn clean verify
-        working-directory: TestProject-SDK 
+        run: |
+          pwd
+          ls -lah
+          mvn clean verify
+        working-directory: TestProject-SDK/ 
           
