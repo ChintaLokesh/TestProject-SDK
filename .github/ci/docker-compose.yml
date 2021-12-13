@@ -20,7 +20,7 @@ services:
   chrome:
     image: selenium/standalone-chrome
     volumes:
-      - E:/Automation Projects/TestProject/Reports:/dev/shm
+      - /dev/shm:/dev/shm
     ports:
     - "5555:4444"
   firefox:
