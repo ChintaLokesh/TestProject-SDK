@@ -31,5 +31,5 @@ jobs:
         env:
           TP_DEV_TOKEN: ${{secrets.TP_DEV_TOKEN}}
         run: mvn clean verify
-        working-directory: TestProject-SDK/code-reuse  
+        working-directory: TestProject-SDK 
           
