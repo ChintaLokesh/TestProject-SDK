@@ -28,32 +28,32 @@ import io.testproject.sdk.drivers.web.EdgeDriver;
 
 public class FirstTest {
 	
-	public static ChromeDriver driver;
-	//public static EdgeDriver driver;
+	//public static ChromeDriver driver;
+	public static EdgeDriver driver;
 	static File src=null;
 	static File dst=null;
 	
 	@BeforeAll
 	static void configure() throws MalformedURLException
 	{
-//		driver = new DriverBuilder<EdgeDriver>(
-//		            new EdgeOptions()
-//		    )
-//		           .withRemoteAddress(new URL("http://localhost:8585"))
-//		            .withToken("2pHVg66vxXkBzFgQDYa3T_lQyEbgD801s9G5vEKRezs")
-//		            .build(EdgeDriver.class);
+		driver = new DriverBuilder<EdgeDriver>(
+		            new EdgeOptions()
+		    )
+		           .withRemoteAddress(new URL("http://localhost:8585"))
+		            .withToken("2pHVg66vxXkBzFgQDYa3T_lQyEbgD801s9G5vEKRezs")
+		            .build(EdgeDriver.class);
 		
 		
-		 driver = new DriverBuilder<ChromeDriver>(new ChromeOptions())
-	                .withCapabilities(new ChromeOptions())
-	                .withToken("2pHVg66vxXkBzFgQDYa3T_lQyEbgD801s9G5vEKRezs")
-	                .build(ChromeDriver.class);
+//		 driver = new DriverBuilder<ChromeDriver>(new ChromeOptions())
+//	                .withCapabilities(new ChromeOptions())
+//	                .withToken("2pHVg66vxXkBzFgQDYa3T_lQyEbgD801s9G5vEKRezs")
+//	                .build(ChromeDriver.class);
 	}
 	
 
 	
 	@Nested
-	class WhenNoSearchResultAreFound{
+	class WhenNoSearchResultAreFoundTest{
 	@Test
 	void shouldDisplayEmptySearchResult() throws IOException
 	{

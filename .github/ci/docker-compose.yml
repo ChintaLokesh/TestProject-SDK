@@ -6,6 +6,7 @@ services:
     depends_on:
       - chrome
       - firefox
+      - edge
     environment:
       TP_API_KEY: "${TP_API_KEY}"
       TP_AGENT_TEMP: "true"
@@ -14,6 +15,8 @@ services:
       CHROME_EXT: "localhost:5555"
       FIREFOX: "firefox:4444"
       FIREFOX_EXT: "localhost:6666"
+      EDGE: "edge:4444"
+      EDGE_EXT: "localhost:7777"
     ports:
     - "8585:8585"
     - "8686:8686"
@@ -29,3 +32,9 @@ services:
       - /dev/shm:/dev/shm
     ports:
     - "6666:4444"
+  edge:
+    image: selenium/standalone-edge
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+    - "7777:4444"

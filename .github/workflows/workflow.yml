@@ -12,7 +12,7 @@ jobs:
       - name: setup JDK
         uses: actions/setup-java@v1
         with:
-          java-version: 11
+          java-version: 15
       - name: Run TestProject Agent
         env:
           TP_API_KEY: ${{secrets.TP_API_KEY}}
@@ -30,8 +30,5 @@ jobs:
       - name: Run tests with Maven
         env:
           TP_DEV_TOKEN: ${{secrets.TP_DEV_TOKEN}}
-        run: |
-          pwd
-          ls -lah
-          mvn clean verify
+        run: mvn clean verify
           
